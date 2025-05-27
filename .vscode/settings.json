@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "stringv.h": "c",
-        "stdio.h": "c",
-        "cstdlib": "c",
-        "memory_resource": "c",
-        "memory": "c"
-    }
-}
