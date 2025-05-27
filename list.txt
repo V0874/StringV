@@ -1,0 +1,77 @@
+// my_strlen – Get string length
+
+my_strcpy – Copy one string to another
+
+my_strncpy – Copy up to n characters
+
+my_strcmp – Compare two strings
+
+my_strncmp – Compare up to n characters
+
+// my_strcat – Concatenate two strings
+
+my_strncat – Concatenate up to n characters
+
+// my_strchr – Find first occurrence of a character
+
+// my_strrchr – Find last occurrence of a character
+
+// my_strdup – Duplicate a string
+
+my_memcpy – Copy a block of memory
+
+my_memset – Fill memory with a constant byte
+    
+// intermediate 
+    
+my_strstr – Find a substring
+
+// my_strrev – Reverse a string in-place
+
+my_strtok – Tokenize string based on delimiter(s)
+
+my_strtrim – Trim leading and trailing whitespace
+
+my_strtoupper – Convert string to uppercase
+
+my_strtolower – Convert string to lowercase
+
+my_itoa – Convert integer to string
+
+my_atoi – Convert string to integer
+
+my_strreplace – Replace all instances of a substring with another
+
+my_strsplit – Split string into array of substrings by delimiter
+
+my_strendswith – Check if string ends with a substring
+
+my_strstartswith – Check if string starts with a substring
+
+// advanced
+
+String struct – Implement a dynamic string type with length & capacity
+
+string_init – Initialize the dynamic string
+
+string_append – Append to a dynamic string
+
+string_insert – Insert a substring at a specific index
+
+string_delete – Remove part of a string by range or value
+
+string_resize – Dynamically resize capacity
+
+string_free – Properly free the dynamic string
+
+Unicode-aware string functions – Handle multibyte UTF-8 characters
+
+string_format – Custom implementation like sprintf for string formatting
+
+Pattern matching – Implement basic wildcards (*, ?)
+
+Hash function – Create a hash of a string (e.g., djb2 or FNV-1a)
+
+Basic compression – Implement simple Run-Length Encoding (RLE)
+
+KMP algorithm – Efficient substring search (Knuth-Morris-Pratt)
