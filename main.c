@@ -4,5 +4,5 @@
 
 int main()
 {
-   printf("%s\n", reverse_string("hello"));
+   printf("%d\n", compare_string("car","car"));
 }

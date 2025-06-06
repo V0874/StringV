@@ -65,3 +65,18 @@ char* reverse_string(char* s){
     printf("Reversed string is %s\n", p);
     return p;
 }
+
+int compare_string(char* s, char* t){
+    int i = string_length(s);
+    int j = string_length(t);
+    if (i != j){
+        return 0;
+    } else {
+        for (int k = 0, m = 0; k < i  && m < j; k++, m++){
+            if (s[k] != t[m]){
+              return 0; 
+            }
+        }
+    }
+    return 1;
+}
