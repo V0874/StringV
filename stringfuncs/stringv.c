@@ -39,7 +39,6 @@ char* copy_str(char* s){
         
     }
     t[string_length(s)] = '\0';
-    printf("New string built is ", t);
     return t;
 }
 
@@ -52,7 +51,7 @@ char* concat_string(char* s, char* t){
         p[string_length(p)] = t[j];
     }
     p[string_length(p)] = '\0';
-    printf("New string built is ", p);
+    printf("%sNew string built is ", p);
     return p;
 }
 
@@ -79,4 +78,11 @@ int compare_string(char* s, char* t){
         }
     }
     return 1;
+}
+
+char* mem_copy(char* s, char* p, unsigned long t){
+    for(int i = 0; i < t; i++){
+        p[i] = s[i];
+    }
+    return p;
 }

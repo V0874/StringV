@@ -1,7 +1,5 @@
 // my_strlen – Get string length
 
-my_strcpy – Copy one string to another
-
 my_strncpy – Copy up to n characters
 
 // my_strcmp – Compare two strings
@@ -18,7 +16,7 @@ my_strncat – Concatenate up to n characters
 
 // my_strdup – Duplicate a string
 
-my_memcpy – Copy a block of memory
+// my_memcpy – Copy a block of memory
 
 my_memset – Fill memory with a constant byte
     
