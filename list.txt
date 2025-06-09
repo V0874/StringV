@@ -1,6 +1,6 @@
 // my_strlen – Get string length
 
-my_strncpy – Copy up to n characters
+// my_strncpy – Copy up to n characters
 
 // my_strcmp – Compare two strings
 
@@ -8,7 +8,7 @@ my_strncmp – Compare up to n characters
 
 // my_strcat – Concatenate two strings
 
-my_strncat – Concatenate up to n characters
+// my_strncat – Concatenate up to n characters
 
 // my_strchr – Find first occurrence of a character
 

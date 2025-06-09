@@ -1,10 +1,13 @@
 #pragma once
+#include "types.h"
 
-int string_length(char* s);
-char find_first_char(char* s, char t);
-char find_last_char(char* s, char t);
-char* copy_str(char* s);
-char* concat_string(char* s, char* t);
-char* reverse_string(char* s);
-char* mem_copy(char* s, char* p, unsigned long t);
-int compare_string(char* s, char* t);
+int string_length(const char* s);
+int find_first_char(const char* s, const char t);
+int find_last_char(const char* s, const char t);
+char* copy_str(const char* s);
+char* concat_string(const char* s, const char* t);
+char* reverse_string(const char* s);
+char* mem_copy(const char* s, char* p, uint32);
+int compare_string(const char* s, const char* t);
+char* copy_chars(const char* s, char* p, int t);
+char* concat_chars(const char* s, char* p, int t);

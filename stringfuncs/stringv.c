@@ -2,17 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int string_length(char *s)
+int string_length(const char *s)
 {
-    int length;
+    int length = 0;
     for (int i = 0; s[i] != '\0'; i++)
     {
-        length = i + 1;
+        length++;
     }
     return length;
 }
 
-char find_first_char(char* s, char t){
+int find_first_char(const char* s, const char t){
     for (int i = 0; i < (int)string_length(s); i++){
         if(s[i] == t){
             printf("The first occurence of %c is at index %d", t, i);
@@ -21,7 +21,7 @@ char find_first_char(char* s, char t){
     }
 }
 
-char find_last_char(char* s, char t){
+int find_last_char(const char* s, const char t){
     for (int i = 0; i < string_length(s); i++){
         for (int j = string_length(s) - 1; j > i; --j){
             if(s[j] == t) {
@@ -32,7 +32,7 @@ char find_last_char(char* s, char t){
     }
 }
 
-char* copy_str(char* s){
+char* copy_str(const char* s){
     char* t = malloc(string_length(s) + 1);
     for (int i = 0; i < string_length(s); i++){
         t[i] = s[i];
@@ -42,7 +42,7 @@ char* copy_str(char* s){
     return t;
 }
 
-char* concat_string(char* s, char* t){
+char* concat_string(const char* s, const char* t){
     char* p = malloc(string_length(s) + string_length(t) + 1);
     for (int i = 0; i < string_length(s); i++){
         p[i] = s[i];
@@ -55,7 +55,7 @@ char* concat_string(char* s, char* t){
     return p;
 }
 
-char* reverse_string(char* s){
+char* reverse_string(const char* s){
     char* p = malloc(string_length(s) + 1);
     for(int i = 0, j = string_length(s) - 1; j >= 0; j--, i++){
         p[i] = s[j];
@@ -65,7 +65,7 @@ char* reverse_string(char* s){
     return p;
 }
 
-int compare_string(char* s, char* t){
+int compare_string(const char* s, const char* t){
     int i = string_length(s);
     int j = string_length(t);
     if (i != j){
@@ -80,9 +80,31 @@ int compare_string(char* s, char* t){
     return 1;
 }
 
-char* mem_copy(char* s, char* p, unsigned long t){
+char* mem_copy(const char* s, char* p, uint32 t){
     for(int i = 0; i < t; i++){
         p[i] = s[i];
     }
+    return p;
+}
+
+char* copy_chars(const char* s, char* p, int t){
+    for(int k = 0; k < t; k++){
+        p[k] = s[k];
+    }
+    p[t] = '\0';
+    printf("%s", p);
+    return p;
+}
+
+char* concat_chars(const char* s, char* p, int t){
+    int i = string_length(s);
+    for (int k = 0; k < i; k++){
+        p[k] = s[k];
+    }
+    for (int k = 0; k < t; k++, i++){
+        p[i] = s[k];
+    }
+    p[i] = '\0';
+    printf("%s", p);
     return p;
 }
