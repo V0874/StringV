@@ -1,4 +1,5 @@
 #include "stringv.h"
+#include <string.h>
 
 int string_length(const char *s)
 {
@@ -107,7 +108,6 @@ char* concat_chars(const char* s, char* p, int t){
     return p;
 }
 
-// new
 int compare_nchars(const char* s, const char* p, usize t){
     for(int i = 0; i < t; i++){
         if(s[i] != p[i]){
@@ -117,8 +117,6 @@ int compare_nchars(const char* s, const char* p, usize t){
     return 1;
 }
 
-
-// new
 char* find_substring(const char *string, char *sub){
     int strlen = string_length(string);
     int sublen = string_length(sub);
@@ -132,7 +130,7 @@ char* find_substring(const char *string, char *sub){
             }
         }
         if (j == sublen){
-            return p + i;
+            return (char *)(string + i);
         }
     }
     return NULL;
