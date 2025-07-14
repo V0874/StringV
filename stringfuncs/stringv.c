@@ -1,6 +1,4 @@
 #include "stringv.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 int string_length(const char *s)
 {
@@ -65,14 +63,14 @@ char* reverse_string(const char* s){
     return p;
 }
 
-int compare_string(const char* s, const char* t){
+int compare_string(const char* s, const char* p){
     int i = string_length(s);
-    int j = string_length(t);
+    int j = string_length(p);
     if (i != j){
         return 0;
     } else {
-        for (int k = 0, m = 0; k < i  && m < j; k++, m++){
-            if (s[k] != t[m]){
+        for (int k = 0; k < i && k < j; k++){
+            if (s[k] != p[k]){
               return 0; 
             }
         }
@@ -80,7 +78,7 @@ int compare_string(const char* s, const char* t){
     return 1;
 }
 
-char* mem_copy(const char* s, char* p, uint32 t){
+char* mem_copy(const char* s, char* p, usize t){
     for(int i = 0; i < t; i++){
         p[i] = s[i];
     }
@@ -107,4 +105,35 @@ char* concat_chars(const char* s, char* p, int t){
     p[i] = '\0';
     printf("%s", p);
     return p;
+}
+
+// new
+int compare_nchars(const char* s, const char* p, usize t){
+    for(int i = 0; i < t; i++){
+        if(s[i] != p[i]){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+// new
+char* find_substring(const char *string, char *sub){
+    int strlen = string_length(string);
+    int sublen = string_length(sub);
+    char* p;
+
+    for(int i = 0; i <= strlen - sublen; i++){
+        int j;
+        for(j = 0; j < sublen; j++){
+            if(string[i+j] != sub[j]){
+                break;
+            }
+        }
+        if (j == sublen){
+            return p + i;
+        }
+    }
+    return NULL;
 }
