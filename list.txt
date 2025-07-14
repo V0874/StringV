@@ -4,7 +4,7 @@
 
 // my_strcmp – Compare two strings
 
-my_strncmp – Compare up to n characters
+// my_strncmp – Compare up to n characters
 
 // my_strcat – Concatenate two strings
 
@@ -22,7 +22,7 @@ my_memset – Fill memory with a constant byte
     
 // intermediate 
     
-my_strstr – Find a substring
+// my_strstr – Find a substring
 
 // my_strrev – Reverse a string in-place
 
