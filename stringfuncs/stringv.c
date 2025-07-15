@@ -135,3 +135,47 @@ char* find_substring(const char *string, char *sub){
     }
     return NULL;
 }
+
+int isUpper(int s){
+    if(s >= 'A' && s <= 'Z'){
+        return 1;
+    }
+    return 0; 
+}
+
+int isLower(int s){
+    if(s >= 'a' && s <= 'z'){
+        return 1;
+    }
+    return 0;
+}
+
+int charToUpper(int s){
+    if(isLower(s)){
+        s -= 32;
+    }
+    return s;
+}
+
+int charToLower(int s){
+    if(isUpper(s)){
+        s += 32;
+    }
+    return s;
+}
+
+char* strToUpper(char* s){
+    int strlen = string_length(s);
+    for(int i = 0; i < strlen; i++){
+        s[i] = charToUpper(s[i]);
+    }
+    return s;
+}
+
+char* strToLower(char* s){
+    int strlen = string_length(s);
+    for(int i = 0; i < strlen; i++){
+        s[i] = charToLower(s[i]);
+    }
+    return s;
+}

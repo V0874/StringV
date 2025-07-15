@@ -30,9 +30,9 @@ my_strtok – Tokenize string based on delimiter(s)
 
 my_strtrim – Trim leading and trailing whitespace
 
-my_strtoupper – Convert string to uppercase
+// my_strtoupper – Convert string to uppercase
 
-my_strtolower – Convert string to lowercase
+// my_strtolower – Convert string to lowercase
 
 my_itoa – Convert integer to string
 
