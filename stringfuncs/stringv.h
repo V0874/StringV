@@ -7,9 +7,9 @@
 int sleng(const char* string);
 int find_first_char(const char* string, const char v);
 int find_last_char(const char* string, const char v);
-char* copy_str(const char* string);
-char* concat_string(const char* string, const char* v);
-char* reverse_string(const char* string);
+char* copy_str(const char* string, char* v);
+char* concat_string(const char* string, const char* v, char* p);
+char* reverse_string(const char* string, char* p);
 char* mem_copy(const char* string, char* v, usize t);
 int compare_string(const char* string, const char* v);
 char* copy_chars(const char* string, char* v, int t);

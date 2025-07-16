@@ -1,8 +1,7 @@
 #include "stringv.h"
 #include <string.h>
 
-int sleng(const char *string)
-{
+int sleng(const char *string){
     int slen = 0;
     for (int i = 0; string[i] != '\0'; i++)
     {
@@ -33,9 +32,8 @@ int find_last_char(const char* string, const char v){
     }
 }
 
-char* copy_str(const char* string){
+char* copy_str(const char* string, char* v){
     int slen = sleng(string);
-    char* v = malloc(slen + 1);
     for (int i = 0; i < slen; i++){
         v[i] = string[i];
         
@@ -44,10 +42,9 @@ char* copy_str(const char* string){
     return v;
 }
 
-char* concat_string(const char* string, const char* v){
+char* concat_string(const char* string, const char* v, char* p){
     int slen = sleng(string);
     int slenV = sleng(v);
-    char* p = malloc(slen + slenV + 1);
     for (int i = 0; i < slen; i++){
         p[i] = string[i];
     }
@@ -59,9 +56,8 @@ char* concat_string(const char* string, const char* v){
     return p;
 }
 
-char* reverse_string(const char* string){
+char* reverse_string(const char* string, char* p){
     int slen = sleng(string);
-    char* p = malloc(slen + 1);
     for(int i = 0, j = slen - 1; j >= 0; j--, i++){
         p[i] = string[j];
     }
