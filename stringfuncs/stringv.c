@@ -1,31 +1,31 @@
 #include "stringv.h"
 #include <string.h>
 
-int sleng(const char *s)
+int sleng(const char *string)
 {
     int slen = 0;
-    for (int i = 0; s[i] != '\0'; i++)
+    for (int i = 0; string[i] != '\0'; i++)
     {
         slen++;
     }
     return slen;
 }
 
-int find_first_char(const char* s, const char v){
-    int slen = sleng(s);
+int find_first_char(const char* string, const char v){
+    int slen = sleng(string);
     for (int i = 0; i < slen; i++){
-        if(s[i] == v){
+        if(string[i] == v){
             printf("The first occurence of %c is at index %d", v, i);
             return i;
         }
     }
 }
 
-int find_last_char(const char* s, const char v){
-    int slen = sleng(s);
+int find_last_char(const char* string, const char v){
+    int slen = sleng(string);
     for (int i = 0; i < slen; i++){
-        for (int j = sleng(s) - 1; j > i; --j){
-            if(s[j] == v) {
+        for (int j = sleng(string) - 1; j > i; --j){
+            if(string[j] == v) {
                 printf("The last occurence of %c is at index %d", v, j);
                 return j;
             }
@@ -33,23 +33,23 @@ int find_last_char(const char* s, const char v){
     }
 }
 
-char* copy_str(const char* s){
-    int slen = sleng(s);
+char* copy_str(const char* string){
+    int slen = sleng(string);
     char* v = malloc(slen + 1);
     for (int i = 0; i < slen; i++){
-        v[i] = s[i];
+        v[i] = string[i];
         
     }
     v[slen] = '\0';
     return v;
 }
 
-char* concat_string(const char* s, const char* v){
-    int slen = sleng(s);
+char* concat_string(const char* string, const char* v){
+    int slen = sleng(string);
     int slenV = sleng(v);
     char* p = malloc(slen + slenV + 1);
     for (int i = 0; i < slen; i++){
-        p[i] = s[i];
+        p[i] = string[i];
     }
     for (int j = 0; j < slenV; j++){
         p[sleng(p)] = v[j];
@@ -59,25 +59,25 @@ char* concat_string(const char* s, const char* v){
     return p;
 }
 
-char* reverse_string(const char* s){
-    int slen = sleng(s);
+char* reverse_string(const char* string){
+    int slen = sleng(string);
     char* p = malloc(slen + 1);
     for(int i = 0, j = slen - 1; j >= 0; j--, i++){
-        p[i] = s[j];
+        p[i] = string[j];
     }
     p[sleng(p)] = '\0';
     printf("Reversed string is %s\n", p);
     return p;
 }
 
-int compare_string(const char* s, const char* v){
-    int i = sleng(s);
+int compare_string(const char* string, const char* v){
+    int i = sleng(string);
     int j = sleng(v);
     if (i != j){
         return 0;
     } else {
         for (int k = 0; k < i && k < j; k++){
-            if (s[k] != v[k]){
+            if (string[k] != v[k]){
               return 0; 
             }
         }
@@ -85,122 +85,122 @@ int compare_string(const char* s, const char* v){
     return 1;
 }
 
-char* mem_copy(const char* s, char* v, usize t){
+char* mem_copy(const char* string, char* v, usize t){
     for(int i = 0; i < t; i++){
-        v[i] = s[i];
+        v[i] = string[i];
     }
     return v;
 }
 
-char* copy_chars(const char* s, char* v, int t){
+char* copy_chars(const char* string, char* v, int t){
     for(int i = 0; i < t; i++){
-        v[i] = s[i];
+        v[i] = string[i];
     }
     v[t] = '\0';
     printf("%s", v);
     return v;
 }
 
-char* concat_chars(const char* s, char* v, int t){
-    int slen = sleng(s);
+char* concat_chars(const char* string, char* v, int t){
+    int slen = sleng(string);
     for (int i = 0; i < slen; i++){
-        v[i] = s[i];
+        v[i] = string[i];
     }
     for (int i = 0; i < t; i++, slen++){
-        v[slen] = s[i];
+        v[slen] = string[i];
     }
     v[slen] = '\0';
     printf("%s", v);
     return v;
 }
 
-int compare_nchars(const char* s, const char* v, usize t){
+int compare_nchars(const char* string, const char* v, usize t){
     for(int i = 0; i < t; i++){
-        if(s[i] != v[i]){
+        if(string[i] != v[i]){
             return 0;
         }
     }
     return 1;
 }
 
-char* find_substring(const char *s, char *v){
-    int slen = sleng(s);
+char* find_substring(const char *string, char *v){
+    int slen = sleng(string);
     int sublen = sleng(v);
     char* p;
 
     for(int i = 0; i <= slen - sublen; i++){
         int j;
         for(j = 0; j < sublen; j++){
-            if(s[i+j] != v[j]){
+            if(string[i+j] != v[j]){
                 break;
             }
         }
         if (j == sublen){
-            return (char *)(s + i);
+            return (char *)(string + i);
         }
     }
     return NULL;
 }
 
-int isUpper(int s){
-    if(s >= 'A' && s <= 'Z'){
+int isUpper(int v){
+    if(v >= 'A' && v <= 'Z'){
         return 1;
     }
     return 0; 
 }
 
-int isLower(int s){
-    if(s >= 'a' && s <= 'z'){
+int isLower(int v){
+    if(v >= 'a' && v <= 'z'){
         return 1;
     }
     return 0;
 }
 
-int charToUpper(int s){
-    if(isLower(s)){
-        s -= 32;
+int charToUpper(int v){
+    if(isLower(v)){
+        v -= 32;
     }
-    return s;
+    return v;
 }
 
-int charToLower(int s){
-    if(isUpper(s)){
-        s += 32;
+int charToLower(int v){
+    if(isUpper(v)){
+        v += 32;
     }
-    return s;
+    return v;
 }
 
-char* strToUpper(char* s){
-    int slen = sleng(s);
+char* strToUpper(char* string){
+    int slen = sleng(string);
     for(int i = 0; i < slen; i++){
-        s[i] = charToUpper(s[i]);
+        string[i] = charToUpper(string[i]);
     }
-    return s;
+    return string;
 }
 
-char* strToLower(char* s){
-    int slen = sleng(s);
+char* strToLower(char* string){
+    int slen = sleng(string);
     for(int i = 0; i < slen; i++){
-        s[i] = charToLower(s[i]);
+        string[i] = charToLower(string[i]);
     }
-    return s;
+    return string;
 }
 
-int isSpace(int s){
-    if(s >= '\t' && s <= '\r' || s == ' '){
+int isSpace(int v){
+    if(v >= '\t' && v <= '\r' || v == ' '){
         return 1;
     }
     return 0;
 }
 
-char* strTrimSpace(const char* s, char* v){
-    int slen = sleng(s);
+char* strTrimSpace(const char* string, char* v){
+    int slen = sleng(string);
     int j = 0;
     for(int i = 0; i < slen; i++){
-        if(!isSpace(s[i])){
-            v[j] = s[i];
+        if(!isSpace(string[i])){
+            v[j] = string[i];
             j++;
-            if(isSpace(s[i+1])){
+            if(isSpace(string[i+1])){
                 v[j] = ' ';
                 j++;
             }

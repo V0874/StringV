@@ -4,23 +4,23 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-int sleng(const char* s);
-int find_first_char(const char* s, const char v);
-int find_last_char(const char* s, const char v);
-char* copy_str(const char* s);
-char* concat_string(const char* s, const char* v);
-char* reverse_string(const char* s);
-char* mem_copy(const char* s, char* v, usize t);
-int compare_string(const char* s, const char* v);
-char* copy_chars(const char* s, char* v, int t);
-char* concat_chars(const char* s, char* v, int t);
-int compare_nchars(const char* s, const char* v, usize t);
-char* find_substring(const char* s, char* v);
-int isUpper(int s);
-int isLower(int s);
-int charToUpper(int s);
-int charToLower(int s);
-char* strToUpper(char* s);
-char* strToLower(char* s);
-int isSpace(int s);
-char* strTrimSpace(const char* s, char* v);
+int sleng(const char* string);
+int find_first_char(const char* string, const char v);
+int find_last_char(const char* string, const char v);
+char* copy_str(const char* string);
+char* concat_string(const char* string, const char* v);
+char* reverse_string(const char* string);
+char* mem_copy(const char* string, char* v, usize t);
+int compare_string(const char* string, const char* v);
+char* copy_chars(const char* string, char* v, int t);
+char* concat_chars(const char* string, char* v, int t);
+int compare_nchars(const char* string, const char* v, usize t);
+char* find_substring(const char* string, char* v);
+int isUpper(int v);
+int isLower(int v);
+int charToUpper(int v);
+int charToLower(int v);
+char* strToUpper(char* string);
+char* strToLower(char* string);
+int isSpace(int v);
+char* strTrimSpace(const char* string, char* v);
