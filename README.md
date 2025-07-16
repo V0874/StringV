@@ -1,4 +1,6 @@
-**StringV** is a string library for C.
+# StringV 
+
+A string library for C.
 
 This is primarily a project to gain a deeper understanding of **C** fundamentals.
 
