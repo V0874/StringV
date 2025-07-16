@@ -179,3 +179,29 @@ char* strToLower(char* s){
     }
     return s;
 }
+
+int isSpace(int s){
+    if(s >= '\t' && s <= '\r' || s == ' '){
+        return 1;
+    }
+    return 0;
+}
+
+char* strTrimSpace(const char* s, char* p){
+    int strlen = string_length(s);
+    int j = 0;
+    for(int i = 0; i < strlen; i++){
+        if(!isSpace(s[i])){
+            p[j] = s[i];
+            j++;
+            if(isSpace(s[i+1])){
+                p[j] = ' ';
+                j++;
+            }
+        }
+    }
+        p[j] = '\0';
+        printf("%d", string_length(p));
+        return p;
+}
+

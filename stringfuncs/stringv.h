@@ -2,6 +2,7 @@
 #include "types.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int string_length(const char* s);
 int find_first_char(const char* s, const char t);
@@ -21,3 +22,5 @@ int charToUpper(int s);
 int charToLower(int s);
 char* strToUpper(char* s);
 char* strToLower(char* s);
+int isSpace(int s);
+char* strTrimSpace(const char* s, char* p);

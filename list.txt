@@ -28,7 +28,7 @@ my_memset – Fill memory with a constant byte
 
 my_strtok – Tokenize string based on delimiter(s)
 
-my_strtrim – Trim leading and trailing whitespace
+// my_strtrim – Trim leading and trailing whitespace
 
 // my_strtoupper – Convert string to uppercase
 
