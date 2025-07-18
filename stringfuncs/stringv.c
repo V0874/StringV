@@ -211,7 +211,8 @@ char* intToStr(int v, char* string, int base){
     int digit;
     int secDigit;
     int i = 0;
-    while(v > 0){
+    if (base >= 2 && base <= 36){
+    while(v != 0){
         digit = v % base;
         secDigit = v / base;
         digit += '0';
@@ -219,7 +220,11 @@ char* intToStr(int v, char* string, int base){
         v = secDigit;
         i++;
     }
-    reverse_string(string);
+} else {
+    *string = '\0';
+    return string;
+}
     string[i] = '\0';
+    reverse_string(string);
     return string;
 }
