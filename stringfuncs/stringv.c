@@ -246,3 +246,14 @@ char* intToStr(int v, char* string, int base){
     reverse_string(string);
     return string;
 }
+
+char* strTokenize(char* string, const char* delimiter){
+    int slen = sleng(string);
+    for(int j = 0, i = 0; i < slen; i++){
+        if (string[i] == delimiter[j]){
+            string[i] = '\0';
+            return (char*)(string);
+            }
+        }
+        return NULL;
+    }

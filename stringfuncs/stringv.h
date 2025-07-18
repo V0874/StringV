@@ -25,3 +25,4 @@ char* strToLower(char* string);
 int isSpace(int v);
 char* strTrimSpace(const char* string, char* v);
 char* intToStr(int v, char* string, int base);
+char* strTokenize(char* string, const char* delimiter);

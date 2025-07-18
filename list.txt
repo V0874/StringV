@@ -26,7 +26,7 @@ my_memset – Fill memory with a constant byte
 
 // my_strrev – Reverse a string in-place
 
-my_strtok – Tokenize string based on delimiter(s)
+// my_strtok – Tokenize string based on delimiter(s)
 
 // my_strtrim – Trim leading and trailing whitespace
 
