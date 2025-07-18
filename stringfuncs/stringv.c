@@ -211,13 +211,31 @@ char* intToStr(int v, char* string, int base){
     int digit;
     int secDigit;
     int i = 0;
+    int isNegative = 0;
     if (base >= 2 && base <= 36){
+        if (v < 0 && base == 10){
+            v = -v;
+            isNegative = 1;
+        }
     while(v != 0){
         digit = v % base;
         secDigit = v / base;
+        if (digit > 9 && digit < 36){
+            digit += 39;
+        }
         digit += '0';
         string[i] = digit;
         v = secDigit;
+        i++;
+    }
+    if (base == 16){
+        string[i] = 'x';
+        i++;
+        string[i] = '0';
+        i++;
+    }
+    if(isNegative){
+        string[i] = '-';
         i++;
     }
 } else {
