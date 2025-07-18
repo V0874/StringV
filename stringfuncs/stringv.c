@@ -56,14 +56,14 @@ char* concat_string(const char* string, const char* v, char* p){
     return p;
 }
 
-char* reverse_string(const char* string, char* p){
+char* reverse_string(char* string){
     int slen = sleng(string);
-    for(int i = 0, j = slen - 1; j >= 0; j--, i++){
-        p[i] = string[j];
+    for(int i = 0, j = slen - 1; j >= i; j--, i++){
+        char temp = string[j];
+        string[j] = string[i];
+        string[i] = temp;
     }
-    p[sleng(p)] = '\0';
-    printf("Reversed string is %s\n", p);
-    return p;
+    return string;
 }
 
 int compare_string(const char* string, const char* v){
@@ -196,6 +196,7 @@ char* strTrimSpace(const char* string, char* v){
         if(!isSpace(string[i])){
             v[j] = string[i];
             j++;
+
             if(isSpace(string[i+1])){
                 v[j] = ' ';
                 j++;
@@ -206,3 +207,19 @@ char* strTrimSpace(const char* string, char* v){
         return v;
 }
 
+char* intToStr(int v, char* string, int base){
+    int digit;
+    int secDigit;
+    int i = 0;
+    while(v > 0){
+        digit = v % base;
+        secDigit = v / base;
+        digit += '0';
+        string[i] = digit;
+        v = secDigit;
+        i++;
+    }
+    reverse_string(string);
+    string[i] = '\0';
+    return string;
+}
