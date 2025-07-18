@@ -34,7 +34,7 @@ my_strtok – Tokenize string based on delimiter(s)
 
 // my_strtolower – Convert string to lowercase
 
-my_itoa – Convert integer to string
+// my_itoa – Convert integer to string
 
 my_atoi – Convert string to integer
 
