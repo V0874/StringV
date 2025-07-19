@@ -249,10 +249,17 @@ char* intToStr(int v, char* string, int base){
 
 char* strTokenize(char* string, const char* delimiter){
     int slen = sleng(string);
-    for(int j = 0, i = 0; i < slen; i++){
-        if (string[i] == delimiter[j]){
-            string[i] = '\0';
-            return (char*)(string);
+    int dlen = sleng(delimiter);
+    for(int i = 0; i < slen; i++){
+        for(int j = 0; j < dlen; j++){
+            if (string[i] != delimiter[j] && j == dlen){
+            j = 0;
+            break;
+            }
+            if(string[i] == delimiter[j]){
+                string[i] = '\0';
+                return (char*)(string);                
+                }
             }
         }
         return NULL;
